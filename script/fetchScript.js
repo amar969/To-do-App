@@ -17,10 +17,9 @@ export const displayData = (data, parentNode) => {
 
     let div = document.createElement("div")
 
-    let taks = document.createElement("ul")
     
-    let title = document.createElement("li")
-    title.innerHTML = `${el.title}`
+    let title = document.createElement("h4")
+    title.innerHTML = el.title
 
     if(el.statusvalue == true) {
         title.style.color ="green"
@@ -29,8 +28,30 @@ export const displayData = (data, parentNode) => {
         title.style.color = "red"
     }
 
+    let delete_btn = document.createElement("button")
+    delete_btn.innerHTML = "Delete"
+
+    delete_btn.addEventListener("click", async() => {
+        console.log(el.id)
+
+        try {
+            
+            let res = await fetch(`http://localhost:3004/tasks/${el.id}`, {
+                method: "DELETE", 
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+        
+            let data1 = await res.json()
+            console.log(data1)   
+            } 
+            catch (error) {
+                console.log(error)    
+            }
+    })
     
-    div.append(title)
+    div.append(title, delete_btn)
 
     parentNode.append(div)
         
