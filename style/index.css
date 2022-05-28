@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#todo_form{
+    margin: 20px;
+}
+
+#todo_form form{
+    display: flex;
+    gap: 20px;
+    grid-template-columns: repeat(2,1fr);
+}
+
+input button{
+    background-color:goldenrod;
+    color: white;
+    border-radius: 10px;
+}
+
+
+#floatingInput{
+    width: 50%;
+}
+
+#main div{
+    margin: 20px;
+    display: flex;  
+    gap: 20px;
+}
