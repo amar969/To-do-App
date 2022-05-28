@@ -12,5 +12,3 @@ let d = await getData(url)
 console.log(d)
 
 let main_div = document.getElementById("main")
-
-displayData(d, main_div)
