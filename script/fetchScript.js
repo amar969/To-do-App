@@ -31,6 +31,8 @@ export const displayData = (data, parentNode) => {
     let delete_btn = document.createElement("button")
     delete_btn.innerHTML = "Delete"
 
+    delete_btn.classList.add("btn", "btn-primary")
+
     delete_btn.addEventListener("click", async() => {
         console.log(el.id)
 
