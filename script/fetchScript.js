@@ -17,6 +17,12 @@ export const displayData = (data, parentNode) => {
 
     let div = document.createElement("div")
 
+    div.addEventListener("click",() => {
+        console.log(el.id)
+        localStorage.setItem("task_id", JSON.stringify(el.id))
+        location.href = "./edit.html"
+    })
+
     
     let title = document.createElement("h4")
     title.innerHTML = el.title
